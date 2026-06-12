@@ -1,0 +1,65 @@
+.inner-card-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+/* إظهار الأزرار عند المرور على الكارد */
+.movie-card:hover .inner-card-controls {
+  opacity: 1;
+}
+
+.ctrl-btn {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  background: rgba(1, 180, 228, 0.95);
+  color: white;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  transition: all 0.3s ease;
+}
+
+.ctrl-btn:hover {
+  transform: scale(1.15);
+
+  background: #01b4e4;
+
+  box-shadow: 0 0 15px rgba(1, 180, 228, 0.5);
+}
+
+/* زر الحذف */
+.ctrl-btn:last-child {
+  background: rgba(239, 68, 68, 0.95);
+}
+
+.ctrl-btn:last-child:hover {
+  background: #ef4444;
+
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+/* للأيقونات */
+.ctrl-btn i {
+  pointer-events: none;
+  font-size: 18px;
+}

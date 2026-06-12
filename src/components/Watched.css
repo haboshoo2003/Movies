@@ -1,0 +1,65 @@
+.watched {
+  min-height: 100vh;
+  background-color: #0b0f19;
+  color: white;
+  padding: 40px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* العنوان والعداد */
+.mainhedding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mainhedding h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.movies-count {
+  background: #01b4e4;
+  color: white;
+
+  padding: 8px 18px;
+  border-radius: 30px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  box-shadow: 0 0 15px rgba(1, 180, 228, 0.4);
+}
+
+/* شبكة الأفلام */
+.movie-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+  gap: 25px;
+}
+
+/* رسالة عدم وجود أفلام */
+.no-movies {
+  text-align: center;
+
+  margin-top: 80px;
+
+  color: #8b949e;
+
+  font-size: 28px;
+  font-weight: 300;
+}

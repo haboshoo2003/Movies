@@ -1,0 +1,133 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0f19;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background: radial-gradient(circle at top right, rgba(229, 9, 20, 0.15), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(0, 119, 255, 0.1), transparent 40%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.add-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 16px 24px;
+  padding-right: 50px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #fff;
+  outline: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.input-container input:focus {
+  border-color: #e50914;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(229, 9, 24, 0.4);
+}
+
+.input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* شبكة عرض الأفلام (Grid) */
+.results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* كرت الفيلم مع تأثير حركي عند التحويم */
+.movie-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  backdrop-filter: blur(5px);
+}
+
+.movie-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  .results {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+}
